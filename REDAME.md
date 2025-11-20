@@ -101,3 +101,22 @@ ng serve -o
 Frontend erreichbar unter:
 
 ➡️ http://localhost:4200
+*.sql
+*.sql.gz
+*.dump
+hr_api2/
+│── app/
+│   ├── routers/
+│   ├── models/
+│   ├── schemas/
+│   ├── db.py
+│   └── main.py
+│
+├── hr-frontend/
+│   ├── src/app/
+│   ├── components/
+│   ├── pages/
+│   └── services/
+│
+├── .env
+└── README.md

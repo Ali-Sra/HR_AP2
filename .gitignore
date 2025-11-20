@@ -9,9 +9,13 @@ __pycache__/
 *.db
 *.log
 .env
-.venv/
+.env.*          # any environment variations
 venv/
-.env.*
+.venv/
+env/
+ENV/
+*.pem
+*.key
 
 # Pip
 pip-wheel-metadata/
@@ -20,6 +24,10 @@ pip-wheel-metadata/
 
 # Uvicorn reload cache
 uvicorn.log
+
+# Alembic migrations cache
+alembic.ini
+alembic/versions/*.pyc
 
 # -----------------------------------
 # Angular / Node
@@ -32,27 +40,55 @@ yarn-debug.log
 yarn-error.log
 package-lock.json
 
+# Angular build output for Docker
+hr-frontend/dist/
+
 # -----------------------------------
-# OS / Editor files
+# Docker
+# -----------------------------------
+postgres_data/
+docker-data/
+*.tar
+*.img
+*.bak
+*.pid
+
+# -----------------------------------
+# Operating System junk
 # -----------------------------------
 .DS_Store
 Thumbs.db
 *.swp
 *.swo
-
-# -----------------------------------
-# OneDrive junk (important!)
-# -----------------------------------
 *.tmp
 ~$*
 Desktop.ini
 
 # -----------------------------------
-# PyCharm / VSCode
+# OneDrive trash (very important)
+# -----------------------------------
+*.tmp
+~$*
+*.lnk
+*.gid
+*.bak
+sync.ffs_db
+OneDriveTemp/
+
+# -----------------------------------
+# IDEs / Editors
 # -----------------------------------
 .idea/
 .vscode/
+.vscode/*
 *.code-workspace
+
+# JetBrains
+*.iml
+out/
+
+# VSCode settings inside Angular workspace (optional)
+hr-frontend/.vscode/
 
 # -----------------------------------
 # Build / Coverage
@@ -63,24 +99,8 @@ htmlcov/
 coverage.xml
 
 # -----------------------------------
-# PostgreSQL Dumps
+# PostgreSQL Dumps & Backups
 # -----------------------------------
 *.sql
-*.sql.gz
 *.dump
-hr_api2/
-│── app/
-│   ├── routers/
-│   ├── models/
-│   ├── schemas/
-│   ├── db.py
-│   └── main.py
-│
-├── hr-frontend/
-│   ├── src/app/
-│   ├── components/
-│   ├── pages/
-│   └── services/
-│
-├── .env
-└── README.md
+*.backup

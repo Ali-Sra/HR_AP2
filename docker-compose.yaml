@@ -1,0 +1,49 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:16
+    container_name: hr_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: hr_user
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: hr_system
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - hr-net
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hr_backend
+    restart: always
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: "postgresql+psycopg://hr_user:1234@db:5432/hr_system"
+    ports:
+      - "8000:8000"
+    networks:
+      - hr-net
+
+  frontend:
+    build:
+      context: ./hr-frontend
+      dockerfile: Dockerfile
+    container_name: hr_frontend
+    restart: always
+    ports:
+      - "4200:4200"
+    networks:
+      - hr-net
+
+volumes:
+  postgres_data:
+
+networks:
+  hr-net:

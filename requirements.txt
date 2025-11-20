@@ -1,0 +1,17 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.1
+
+SQLAlchemy==2.0.31
+psycopg[binary]==3.1.19
+
+python-dotenv==1.0.1
+
+pydantic==2.8.2
+pydantic-settings==2.3.4
+
+alembic==1.13.2
+
+typing_extensions==4.12.2
+
+# Optional but recommended
+fastapi-cors
