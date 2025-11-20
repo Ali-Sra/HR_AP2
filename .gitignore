@@ -1,0 +1,86 @@
+# -----------------------------------
+# Python / FastAPI
+# -----------------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+*.log
+.env
+.venv/
+venv/
+.env.*
+
+# Pip
+pip-wheel-metadata/
+*.egg-info/
+.eggs/
+
+# Uvicorn reload cache
+uvicorn.log
+
+# -----------------------------------
+# Angular / Node
+# -----------------------------------
+node_modules/
+dist/
+.angular/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+package-lock.json
+
+# -----------------------------------
+# OS / Editor files
+# -----------------------------------
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# -----------------------------------
+# OneDrive junk (important!)
+# -----------------------------------
+*.tmp
+~$*
+Desktop.ini
+
+# -----------------------------------
+# PyCharm / VSCode
+# -----------------------------------
+.idea/
+.vscode/
+*.code-workspace
+
+# -----------------------------------
+# Build / Coverage
+# -----------------------------------
+coverage/
+htmlcov/
+*.coverage
+coverage.xml
+
+# -----------------------------------
+# PostgreSQL Dumps
+# -----------------------------------
+*.sql
+*.sql.gz
+*.dump
+hr_api2/
+│── app/
+│   ├── routers/
+│   ├── models/
+│   ├── schemas/
+│   ├── db.py
+│   └── main.py
+│
+├── hr-frontend/
+│   ├── src/app/
+│   ├── components/
+│   ├── pages/
+│   └── services/
+│
+├── .env
+└── README.md
