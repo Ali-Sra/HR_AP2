@@ -2,7 +2,7 @@ name: CI Pipeline
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build-test:
@@ -14,20 +14,11 @@ jobs:
         with:
           submodules: false
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
+      - name: Check Python
+        run: python --version
 
       - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
-
-      - name: Basic check
-        run: |
-          python --version
-          echo "CI is working"
+        run: pip install -r requirements.txt
 
       - name: Docker build
-        run: |
-          docker build -t hr_ap2 .
+        run: docker build -t hr_ap2 .
