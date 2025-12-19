@@ -1,6 +1,6 @@
-# -----------------------------------
+# ===================================
 # Python / FastAPI
-# -----------------------------------
+# ===================================
 __pycache__/
 *.py[cod]
 *.pyo
@@ -8,44 +8,56 @@ __pycache__/
 *.sqlite3
 *.db
 *.log
+
 .env
-.env.*          # any environment variations
+.env.*
 venv/
 .venv/
 env/
 ENV/
+
 *.pem
 *.key
 
-# Pip
+# Pip / Python build
 pip-wheel-metadata/
 *.egg-info/
 .eggs/
 
-# Uvicorn reload cache
+# Uvicorn
 uvicorn.log
 
-# Alembic migrations cache
-alembic.ini
+# Alembic cache
 alembic/versions/*.pyc
 
-# -----------------------------------
-# Angular / Node
-# -----------------------------------
+
+# ===================================
+# Angular / Node.js
+# ===================================
 node_modules/
 dist/
 .angular/
-npm-debug.log
-yarn-debug.log
-yarn-error.log
-package-lock.json
+.vite/
 
-# Angular build output for Docker
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ✅ IMPORTANT: keep package-lock.json (DO NOT ignore)
+# package-lock.json   ❌ intentionally NOT ignored
+
+
+# ===================================
+# Angular workspace specific
+# ===================================
+hr-frontend/node_modules/
 hr-frontend/dist/
+hr-frontend/.angular/
 
-# -----------------------------------
+
+# ===================================
 # Docker
-# -----------------------------------
+# ===================================
 postgres_data/
 docker-data/
 *.tar
@@ -53,54 +65,46 @@ docker-data/
 *.bak
 *.pid
 
-# -----------------------------------
-# Operating System junk
-# -----------------------------------
-.DS_Store
-Thumbs.db
-*.swp
-*.swo
-*.tmp
-~$*
-Desktop.ini
 
-# -----------------------------------
-# OneDrive trash (very important)
-# -----------------------------------
-*.tmp
-~$*
-*.lnk
-*.gid
-*.bak
-sync.ffs_db
-OneDriveTemp/
-
-# -----------------------------------
-# IDEs / Editors
-# -----------------------------------
-.idea/
-.vscode/
-.vscode/*
-*.code-workspace
-
-# JetBrains
-*.iml
-out/
-
-# VSCode settings inside Angular workspace (optional)
-hr-frontend/.vscode/
-
-# -----------------------------------
+# ===================================
 # Build / Coverage
-# -----------------------------------
+# ===================================
 coverage/
 htmlcov/
 *.coverage
 coverage.xml
 
-# -----------------------------------
-# PostgreSQL Dumps & Backups
-# -----------------------------------
-*.sql
-*.dump
-*.backup
+
+# ===================================
+# Operating System junk
+# ===================================
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*.tmp
+~$*
+
+
+# ===================================
+# OneDrive / Windows sync junk
+# ===================================
+*.lnk
+*.gid
+sync.ffs_db
+OneDriveTemp/
+
+
+# ===================================
+# IDEs / Editors
+# ===================================
+.idea/
+*.iml
+out/
+
+.vscode/
+*.code-workspace
+
+# Optional VSCode settings inside frontend
+hr-frontend/.vscode/
