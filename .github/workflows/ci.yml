@@ -1,31 +1,24 @@
-name: CI
+name: CI-Test-Self-Hosted
 
 on:
   push:
-  pull_request:
+    branches:
+      - main
 
 jobs:
-  build-test:
-    runs-on: ubuntu-latest
+  test:
+    runs-on: self-hosted
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Check Python
+      - name: Test Runner
+        shell: powershell
         run: |
-          python --version
-          pip --version
+          echo "Runner is OK"
 
-      - name: Install dependencies
+      - name: Test WSL
+        shell: powershell
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-
-      - name: Docker build
-        run: docker build -t hr_ap2 .
+          wsl -d Ubuntu -- echo "WSL is OK"
