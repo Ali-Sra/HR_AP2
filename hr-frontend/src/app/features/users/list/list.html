@@ -1,0 +1,17 @@
+<h2>Users List</h2>
+
+<table border="1" width="100%">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Family</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let u of users">
+      <td>{{ u.name }}</td>
+      <td>{{ u.family }}</td>
+    </tr>
+  </tbody>
+</table>
